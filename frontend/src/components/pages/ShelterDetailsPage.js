@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import { 
   Box, 
   Typography, 
@@ -7,12 +7,10 @@ import {
   Paper, 
   Button, 
   Card, 
-  CardContent, 
-  CardMedia,
+  CardContent,
   Avatar,
   Chip,
   Rating,
-  Divider,
   Tabs,
   Tab,
   IconButton

@@ -57,37 +57,116 @@ const HomePage = () => {
 
   return (
     <Box>
-      {/* Hero Section */}
+      {/* Hero Section - в точности как в Figma */}
+      {/* Hero Section - в точности как в Figma */}
       <Box
         sx={{
-          height: 400,
-          backgroundImage: 'url(/images/hero-background.jpg)',
+          height: 700,
+          position: 'relative',
+          backgroundColor: '#D7C5B2',
+          backgroundImage: 'url(/images/paws.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          display: 'flex',
-          alignItems: 'center',
+          overflow: 'hidden',
           mb: 6,
-          borderRadius: 2,
         }}
       >
-        <Container>
-          <Box sx={{ maxWidth: 600, p: 3, bgcolor: 'rgba(255, 255, 255, 0.9)', borderRadius: 2 }}>
-            <Typography variant="h3" component="h1" gutterBottom>
+        {/* Контейнер для текста */}
+        <Container 
+          sx={{
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative',
+            zIndex: 2
+          }}
+        >
+          <Box 
+            sx={{ 
+              maxWidth: 850, 
+              textAlign: 'center',
+              mx: 'auto',
+              py: 4,
+              position: 'relative',
+              zIndex: 2
+            }}
+          >
+            <Typography 
+              variant="h2" 
+              component="h1" 
+              sx={{ 
+                fontWeight: 700, 
+                mb: 3,
+                color: '#333',
+                fontSize: { xs: '2.5rem', md: '3.75rem' }
+              }}
+            >
               Find a Loving Home for Every Pet
             </Typography>
-            <Typography variant="h6" sx={{ mb: 3 }}>
-              Connect loving foster homes with pets in need. QamqorPaw makes fostering easy, safe, and rewarding.
+            <Typography 
+              variant="h6" 
+              sx={{ 
+                mb: 4,
+                color: '#333',
+                fontWeight: 400
+              }}
+            >
+              Connect loving foster homes with pets in need. QamqorPaw makes 
+              fostering easy, safe, and rewarding
             </Typography>
             <Button 
               variant="contained" 
               size="large" 
-              sx={{ mr: 2 }}
+              sx={{ 
+                px: 4,
+                py: 1.5,
+                borderRadius: '50px',
+                backgroundColor: '#75c6d1',
+                color: 'white',
+                fontWeight: 500,
+                '&:hover': {
+                  backgroundColor: '#5bb0bb'
+                },
+                textTransform: 'uppercase'
+              }}
               onClick={() => navigate('/dogs')}
             >
-              Start Fostering
+              START FOSTERING
             </Button>
           </Box>
         </Container>
+          
+        {/* Группа изображений животных */}
+        <Box 
+          component="img" 
+          src="/images/pets.png" 
+          alt="Dogs and cats"
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '100%',
+            maxWidth: '1200px',
+            zIndex: 1
+          }}
+        />
+
+        {/* Декоративные элементы */}
+        <Box 
+          component="img" 
+          src="/images/figures.png" 
+          alt="Decorative background"
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            zIndex: 0
+          }}
+        />
       </Box>
       
       {/* Dog Adoption Section */}

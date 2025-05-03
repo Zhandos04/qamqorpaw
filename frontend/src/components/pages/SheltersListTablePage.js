@@ -20,7 +20,6 @@ import {
 import { useNavigate } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import MapIcon from '@mui/icons-material/Map';
-import PlaceIcon from '@mui/icons-material/Place';
 import ClearIcon from '@mui/icons-material/Clear';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { sheltersApi } from '../../services/api';

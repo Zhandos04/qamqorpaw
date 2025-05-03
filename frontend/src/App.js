@@ -31,50 +31,113 @@ const UserProfilePage = lazy(() => import('./components/pages/UserProfilePage'))
 const UserFavoritesPage = lazy(() => import('./components/pages/UserFavoritesPage'));
 const UserPetReportsPage = lazy(() => import('./components/pages/UserPetReportsPage'));
 
-// Create a theme
+// Создание темы с правильной типографикой
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#75c6d1',
+    palette: {
+      primary: {
+        main: '#75c6d1',
+      },
+      secondary: {
+        main: '#e8b07d',
+      },
+      background: {
+        default: '#f6f6f6',
+      },
     },
-    secondary: {
-      main: '#e8b07d',
+    typography: {
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontSize: 14,
+      fontWeightRegular: 400,
+      button: {
+        textTransform: 'none',
+        fontWeight: 400,
+        fontSize: '14px',
+        lineHeight: '21px',
+        letterSpacing: '0%',
+      },
+      body1: {
+        fontSize: '14px',
+        lineHeight: '21px',
+        letterSpacing: '0%',
+      },
+      body2: {
+        fontSize: '12px',
+        lineHeight: '18px',
+        letterSpacing: '0%',
+      },
+      h1: {
+        fontWeight: 600,
+        fontSize: '32px',
+        lineHeight: '38px',
+      },
+      h2: {
+        fontWeight: 600,
+        fontSize: '24px',
+        lineHeight: '29px',
+      },
+      h3: {
+        fontWeight: 500,
+        fontSize: '20px',
+        lineHeight: '24px',
+      },
+      h4: {
+        fontWeight: 500,
+        fontSize: '18px',
+        lineHeight: '22px',
+      },
+      h5: {
+        fontWeight: 500,
+        fontSize: '16px',
+        lineHeight: '20px',
+      },
+      h6: {
+        fontWeight: 500,
+        fontSize: '14px',
+        lineHeight: '18px',
+      },
     },
-    background: {
-      default: '#f6f6f6',
-    },
-  },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h1: {
-      fontWeight: 600,
-    },
-    h2: {
-      fontWeight: 600,
-    },
-    h3: {
-      fontWeight: 500,
-    },
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
-          textTransform: 'none',
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: 8,
+            textTransform: 'none',
+            fontWeight: 400,
+            fontSize: '14px',
+            lineHeight: '21px',
+            letterSpacing: '0%',
+          },
+          containedPrimary: {
+            backgroundColor: '#75c6d1',
+            borderRadius: 28,
+            '&:hover': {
+              backgroundColor: '#5ab0bc',
+            },
+          },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            fontSize: '14px',
+            lineHeight: '21px',
+          },
+          input: {
+            fontSize: '14px',
+            lineHeight: '21px',
+          },
+        },
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            borderRadius: 12,
+            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.05)',
+          },
         },
       },
     },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 12,
-          boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.05)',
-        },
-      },
-    },
-  },
-});
+  });
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {

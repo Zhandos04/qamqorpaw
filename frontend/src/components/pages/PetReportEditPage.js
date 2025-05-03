@@ -41,7 +41,7 @@ const PetReportEditPage = () => {
   const [loading, setLoading] = useState(true);
   const [submitLoading, setSubmitLoading] = useState(false);
   const [error, setError] = useState('');
-  const [report, setReport] = useState(null);
+  const [, setReport] = useState(null);
   const [breeds, setBreeds] = useState([]);
   const [cities, setCities] = useState([]);
   const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
