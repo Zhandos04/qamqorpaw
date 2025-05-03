@@ -253,22 +253,6 @@ const HomePage = () => {
         </CardActionArea>
       </Card>
       
-      {/* Donation Section */}
-      <Typography variant="h4" component="h2" gutterBottom>
-        Support QamqorPaw - Every Donation Makes a Difference!
-      </Typography>
-      <Typography variant="body1" paragraph>
-        Your contribution helps provide food, medical care, and shelter for animals in need while supporting our outreach and education programs.
-      </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 2, mb: 6 }}>
-        <Button variant="outlined" onClick={() => navigate('/donate')}>100 ₸</Button>
-        <Button variant="outlined" onClick={() => navigate('/donate')}>500 ₸</Button>
-        <Button variant="outlined" onClick={() => navigate('/donate')}>1000 ₸</Button>
-        <Button variant="outlined" onClick={() => navigate('/donate')}>5000 ₸</Button>
-        <Button variant="outlined" onClick={() => navigate('/donate')}>10 k ₸</Button>
-        <Button variant="outlined" onClick={() => navigate('/donate')}>Other</Button>
-      </Box>
-      
       {/* Platform Stats */}
       <Box sx={{ bgcolor: '#f5f5f5', p: 4, borderRadius: 2 }}>
         <Typography variant="h5" component="h3" align="center" gutterBottom>

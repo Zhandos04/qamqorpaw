@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { API_URL } from '../config';
 
@@ -9,15 +9,8 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [loading, setLoading] = useState(true);
   
-  useEffect(() => {
-    if (token) {
-      getUserProfile();
-    } else {
-      setLoading(false);
-    }
-  }, [token]);
-  
-  const getUserProfile = async () => {
+  // Оборачиваем getUserProfile в useCallback
+  const getUserProfile = useCallback(async () => {
     try {
       const response = await axios.get(`${API_URL}/api/users/me/`, {
         headers: {
@@ -31,7 +24,22 @@ export const AuthProvider = ({ children }) => {
       logout();
       setLoading(false);
     }
+  }, [token]); // Зависимость только от token
+  
+  // Теперь функция logout должна быть определена до getUserProfile
+  const logout = () => {
+    localStorage.removeItem('token');
+    setToken(null);
+    setCurrentUser(null);
   };
+  
+  useEffect(() => {
+    if (token) {
+      getUserProfile();
+    } else {
+      setLoading(false);
+    }
+  }, [token, getUserProfile]);
   
   const login = async (username, password) => {
     try {
@@ -57,12 +65,6 @@ export const AuthProvider = ({ children }) => {
       console.error('Registration error:', error);
       return false;
     }
-  };
-  
-  const logout = () => {
-    localStorage.removeItem('token');
-    setToken(null);
-    setCurrentUser(null);
   };
   
   const updateProfile = async (userData) => {

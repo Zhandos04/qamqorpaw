@@ -30,7 +30,6 @@ const RegisterPage = lazy(() => import('./components/pages/RegisterPage'));
 const UserProfilePage = lazy(() => import('./components/pages/UserProfilePage'));
 const UserFavoritesPage = lazy(() => import('./components/pages/UserFavoritesPage'));
 const UserPetReportsPage = lazy(() => import('./components/pages/UserPetReportsPage'));
-const DonatePage = lazy(() => import('./components/pages/DonatePage'));
 
 // Create a theme
 const theme = createTheme({
@@ -154,7 +153,6 @@ function App() {
                   <Route path="profile" element={<UserProfilePage />} />
                   <Route path="favorites" element={<UserFavoritesPage />} />
                   <Route path="my-reports" element={<UserPetReportsPage />} />
-                  <Route path="donate" element={<DonatePage />} />
 
                   {/* Catch-all route for 404 */}
                   <Route path="*" element={<Navigate to="/" replace />} />

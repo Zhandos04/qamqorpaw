@@ -143,9 +143,6 @@ updateReport: (id, reportData) => {
   // Get all pet reports
   getAllReports: (params) => api.get('/pets/reports/', { params }),
   
-  // Get report details by ID
-  getReportById: (id) => api.get(`/pets/reports/${id}/`),
-  
   // Get user's reports
   getUserReports: () => api.get('/pets/reports/my_reports/'),
   

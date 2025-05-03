@@ -53,9 +53,6 @@ const Footer = () => {
             <Link component={RouterLink} to="/report" color="inherit" display="block" sx={{ mb: 1 }}>
               Report a Found Pet
             </Link>
-            <Link component={RouterLink} to="/donate" color="inherit" display="block">
-              Donate
-            </Link>
           </Grid>
           
           <Grid item xs={12} sm={4}>
@@ -95,3 +92,5 @@ const Footer = () => {
     </Box>
   );
 };
+
+export default Footer;

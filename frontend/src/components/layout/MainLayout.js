@@ -84,10 +84,6 @@ const MainLayout = () => {
           <ListItemIcon><ReportIcon /></ListItemIcon>
           <ListItemText primary="Report a Pet" />
         </ListItem>
-        <ListItem button onClick={() => navigate('/donate')}>
-          <ListItemIcon><FavoriteIcon /></ListItemIcon>
-          <ListItemText primary="Donate" />
-        </ListItem>
       </List>
       <Divider />
       {isAuthenticated ? (
@@ -154,8 +150,7 @@ const MainLayout = () => {
             <Button color="inherit" sx={{ color: '#333' }} onClick={() => navigate('/cats')}>Cats</Button>
             <Button color="inherit" sx={{ color: '#333' }} onClick={() => navigate('/shelters')}>Shelters & Clinics</Button>
             <Button color="inherit" sx={{ color: '#333' }} onClick={() => navigate('/report')}>Report a Pet</Button>
-            <Button color="inherit" sx={{ color: '#333' }} onClick={() => navigate('/donate')}>Donate</Button>
-            
+        
             {isAuthenticated ? (
               <>
                 <IconButton onClick={handleUserMenuOpen} color="inherit" sx={{ color: '#333' }}>
